@@ -1,0 +1,14 @@
+.hero {
+    min-height: 20vh;
+    background: url("/img/trenitalia_cover.jpg") center / cover no-repeat;
+}
+
+.full-bg {
+    min-height: 80vh;
+    background: url("/img/trenitalia_body.jpg") center / cover no-repeat;
+}
+
+.glass{
+  background: rgba(255,255,255,.1);
+  backdrop-filter: blur(6px);
+}
