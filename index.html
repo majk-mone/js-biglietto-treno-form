@@ -13,52 +13,108 @@
 <body>
     <div class="container-fluid px-0">
         <div class="hero d-flex align-items-center justify-content-center text-white">
-            <div class="row w-100 justify-content-center">
-                <div class="col-4 text-start">
-                    <h1 class="p-3">Ticket</h1>
-                </div>
-                <div class="col-4 text-end">
-                    <h1 class="p-3">Price</h1>
-                </div>
-            </div>
+
         </div>
 
         <div class="full-bg">
-            <div class="row w-100 justify-content-center">
+            <div class="text-center">
+                <h2>Calcola Il Prezzo Del Tuo Biglietto </h2>
+                <div class="row justify-content-center">
 
-                <form class="col-4 p-4 border border-dark rounded glass" style=" max-width:400px;">
+                    <form class="ticketForm row mb-4 align-items-end border border-dark rounded glass">
 
-                    <div class="mb-3">
-                        <label class="form-label">
-                            <h3>Age</h3>
-                        </label>
+                        <div class="col mb-1">
 
-                        <input type="number" class="form-control bg-transparent border-dark text-dark" id="age" min="0"
-                            max="120" required>
+                            <label class="form-label">
+                                <h5>Nome Cognome</h5>
+                            </label>
+
+                            <input type="text" class="form-control bg-transparent border-dark text-dark"
+                                id="nameSurname" required>
+                        </div>
+                        <div class="col m-1">
+                            <label class="form-label">
+                                <h5>Km Da Percorrere</h5>
+                            </label>
+                            <input type="number" class="form-control bg-transparent border-dark text-dark" id="km"
+                                required>
+                        </div>
+                        <div class="col m-1">
+                            <label class="form-label">
+                                <h5>Fascia d'età</h5>
+                            </label>
+                            <select class="form-select bg-transparent border-dark text-dark" id="ageRange">
+                                <option class="border-dark">Maggiorenne</option>
+                                <option class="border-dark">Minorenne</option>
+                                <option class="border-dark">Over 65</option>
+                            </select>
+                        </div>
+                        <div class="row m-1 ">
+                            <div>
+                                <button type="button" class="btn m-2 btn-outline-dark"
+                                    onclick="getPrice()">Genera</button>
+
+                                <button type="reset" class="btn m-2 btn-outline-dark" onclick="reset()">Annulla
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row justify-content-start">
+                <div class="row border-dark rounded glass">
+                    <h3 class="text-center">Il Tuo Biglietto:</h3>
+                    <br>
+
+                    <h5>Passegers Details</h5>
+
+                    <div id="userDetails" class="col-2 text-center border border-dark rounded text-dark glass-ticket" ">
+
+                        <div class=" row text-center fw-bold mb-2">
+                        <div class="col">
+                            <span class=" fw-bold">Name Surname:</span>
+                        </div>
+
+                        <div class="row text-center"></div>
+                        <div class="col">
+                            <p><span id="showNameSurname">-</span></p>
+
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">
-                            <h3>Km</h3>
-                        </label>
-                        <input type="number" class="form-control bg-transparent border-dark text-dark" id="km" required>
-                    </div>
 
-                    <button type="button" class="btn btn-outline-dark w-100" onclick="getPrice()">Calculate
-                        Price</button>
-                </form>
+                </div>
+                <div class="col " style="padding-left: 0px; padding-right: 0px;">
+                    <div class="col-12  h-100 border border-dark rounded bg-transparent text-dark">
+                        <div class="row text-center fw-bold mb-2">
+                            <div class="col">Offerta</div>
+                            <div class="col">Carrozza</div>
+                            <div class="col">Codice CP</div>
+                            <div class="col">Costo biglietto</div>
+                        </div>
 
-                <div class="col-4 p-4 border border-dark rounded glass" style=" max-width:400px;">
-                    <div id="ticketData" class="p-4 border border-dark rounded bg-transparent text-dark">
-                        <h3>Ticket Info:</h3>
-                        <br>
-                        <p><span class="fw-bold">Age:</span> <span id="showAge">-</span></p>
-                        <p><span class="fw-bold">Distance:</span> <span id="showKm">- km</span></p>
-                        <p><span class="fw-bold">Price:</span> <span id="showPrice">- €</span></p>
+                        <div class="row text-center">
+                            <div class="col">
+                                <p><span id="seniority">- </span></p>
+                            </div>
+                            <div class="col ">
+                                <p> 5</p>
+                            </div>
+                            <div class="col ">
+                                <p>92911</p>
+                            </div>
+                            <div class="col ">
+                                <p><span id="showPrice">- €</span></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
+    </div>
+
+
 
 
 
@@ -71,3 +127,40 @@
 </body>
 
 </html>
+
+<!-- 
+     <h3 class="text-center text-white mb-3">
+            IL TUO BIGLIETTO
+        </h3>
+
+        < CARD BIGLIETTO 
+        <div class="card shadow p-4">
+
+            <h5>DETTAGLIO PASSEGGERI</h5>
+            <hr>
+
+            <div class="row g-0">
+
+                <div class="col-md-9 p-3">
+
+                    <div class="row text-center fw-bold">
+                        <div class="col">Offerta</div>
+                        <div class="col">Carrozza</div>
+                        <div class="col">Codice CP</div>
+                        <div class="col">Costo biglietto</div>
+                    </div>
+
+                    <div class="row text-center mt-2">
+                        <div class="col">Biglietto Standard</div>
+                        <div class="col">5</div>
+                        <div class="col">92911</div>
+                        <div class="col">2.10 €</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>-->
